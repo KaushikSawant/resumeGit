@@ -1,36 +1,36 @@
 //import React from "react"
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import {FcSportsMode} from "react-icons/fc"
-import React,{useState,useEffect} from "react"
+import { FcSportsMode } from "react-icons/fc"
+import React, { useState, useEffect } from "react"
 
-function Hobbies(){
+function Hobbies() {
     const [city, setCity] = useState(null);
     const [search, setSearch] = useState("Mumbai");
 
-   /* useEffect( () =>{
+    useEffect(() => {
         const fetchApi = async () => {
             const url = `http://localhost:8000/elements`;
             const response = await fetch(url);
             const resJson = await response.json();
-           console.log(resJson);
+            console.log(resJson);
             setCity(resJson.sports[0].sport1)
             //change variable name to sports or games for setCIt ad city   
         }
 
         fetchApi();
-},[search])*/
+    }, [search])
 
 
-    return(
+    return (
         <div className="row justify-content-end">
-                
+
             <div className="col-12 col-md-8 card bgProject">
                 <div>
                     <h3>Interests:</h3>
-                    <p><FcSportsMode size="2em"/>I love playing Football and {city}.</p>
+                    <p><FcSportsMode size="2em" />I love playing Football and {city}.</p>
                 </div>
-            </div> 
-        </div>    
+            </div>
+        </div>
     )
 
 }
