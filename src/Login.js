@@ -9,7 +9,9 @@ function Login(){
     const [password, setPassword] = useState('');
 
     const [loginStatus, setLoginStatus] = useState('');
-
+    function openResume(){
+        window.open("http://localhost:3000/home","_self");
+    };
     const login = ()=>{
         Axios.post("http://localhost:3001/login",{
             username: username,
@@ -19,7 +21,8 @@ function Login(){
                 setLoginStatus(response.data.message);
             }else{
                 setLoginStatus("welcome"+ " " + response.data[0].email);
-                window.open("http://localhost:3000/home","_self");
+                setTimeout(openResume,1000);
+                //window.open("http://localhost:3000/home","_self");
             }
     });
     };
